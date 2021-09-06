@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Title</title>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="100" header="Top" resizable="true" closable="true" collapsible="true">
+                <h:outputText value="Top unit content." />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
+                <h:outputText value="South unit content." />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="200" header="Left" resizable="true" closable="true" collapsible="true">
+
+                <p:menu>
+                    <p:submenu label="Resources">
+                        <p:menuitem value="Mapas" url="faces/pages/M"  />
+                        <p:menuitem value="Feeds" url="faces/pages/feed" />
+                        <p:menuitem value="Gerenciar Cliente" url="faces/view/cliente"/>
+
+                    </p:submenu>
+
+                </p:menu>
+
+
+            </p:layoutUnit>
+
+            <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">
+                <h:outputText value="Right unit content." />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <ui:insert name="content">Put default content here, if any.</ui:insert>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>

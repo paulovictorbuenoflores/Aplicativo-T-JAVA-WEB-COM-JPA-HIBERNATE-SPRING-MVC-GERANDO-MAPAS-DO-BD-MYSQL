@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/mapas"  reloadable="true">
+<Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/bd" password="" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/bd?zeroDateTimeBehavior=convertToNull" username="root" validationQuery="SELECT 1"/>
+  <Resource auth="Container" mail.smtp.auth="true" mail.smtp.host="localhost" mail.smtp.password="123" mail.smtp.port="25" mail.smtp.user="root@localhost" name="mail/Session" type="javax.mail.Session"/>
+</Context>

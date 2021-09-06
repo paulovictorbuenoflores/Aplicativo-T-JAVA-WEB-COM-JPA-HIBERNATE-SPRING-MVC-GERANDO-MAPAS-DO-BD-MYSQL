@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Title</title>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="150"  resizable="true" closable="true" collapsible="true">
+
+                  <p:toolbar>
+                    <p:toolbarGroup align="right">
+                       
+                        <h:form> <h:commandLink id="cadastro" action="#{usuarioBean.novo()}"><h3>Novo usuário</h3></h:commandLink></h:form> 
+                    <h:outputLink value="restrito/principal.jsf"><h3>Entrar</h3></h:outputLink>
+                
+            
+                </p:toolbarGroup>
+                </p:toolbar>
+                
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
+                <h:outputText value="South unit content." />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="200" header="Left" resizable="true" closable="true" collapsible="true">
+
+                <p:menu>
+                    <p:submenu label="Resources">
+                        <p:menuitem value="Grafico" url="/publico/jfreechartcolunas.xhtml"  />
+                        <p:menuitem value="Feeds" url="#" />
+                        <p:menuitem value="Gerenciar Cliente" url="restrito/principal.jsf"/>
+
+
+                    </p:submenu>
+
+
+                </p:menu>
+                <p:menu>
+                    <p:menuitem value="Mapa com estados" url="publico/mapa_gastos.jsf" />
+                </p:menu>
+
+            </p:layoutUnit>
+
+            <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">
+                <h:outputText value="Right unit content." />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <ui:insert name="content">Put default content here, if any.
+
+
+                    <p:graphicImage value="#{cidadeBean.grafico}" /> 
+                    <p:graphicImage value="#{MadeiraBean.grafico}" /> 
+
+                </ui:insert>
+            </p:layoutUnit>
+        </p:layout>
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Página de boas-vindas do Primefaces" />
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Página de boas-vindas do Primefaces" />
+    </h:body>
+</html>

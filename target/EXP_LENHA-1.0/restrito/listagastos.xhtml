@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui">	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Listagem de gastos</title>
+</h:head>
+<h:body>
+    <h1>Gastos</h1>
+        <h:form>
+            <!--caixa para buscar o estado-->
+            <h:selectOneMenu id="estado" value="#{gastosLenhaBean.estado}"> <!-- deve haver um setEstado no bean -->
+		<f:selectItems value="#{gastosLenhaBean.lista}" var="o" itemLabel="#{o.estado}" itemValue="#{o.estado}" />
+            </h:selectOneMenu>
+            
+            <!--caixa para buscar a cidade-->
+            <h:selectOneMenu id="cidade2" value="#{gastosLenhaBean.cidade}" > <!-- deve haver um setCidade no bean -->
+                <f:selectItems value="#{gastosLenhaBean.lista}" var="o" itemLabel="#{o.municipio}" itemValue="#{o.municipio}" />
+            </h:selectOneMenu>
+            
+            <p:selectOneMenu id="cidade" value="#{gastosLenhaBean.cidade}" effect="fold" editable="true">
+                <f:selectItem itemLabel="Selecione a cidade" itemValue="" />
+                <f:selectItems value="#{gastosLenhaBean.lista}" var="o" itemLabel="#{o.municipio}" itemValue="#{o.municipio}" />
+            </p:selectOneMenu>
+            
+            
+            <h:commandButton value="Buscar Gastos" action="#{gastosLenhaBean.listaGastosEstado()}"/>
+        </h:form>
+	
+    
+    
+    <p:separator />
+    
+    <!--h:form>
+         <h:outputLabel value="CNPJ:" for="cnpj" />
+                    <h:inputText id="cnpj" label="cnpj"
+                                 value="#{gastosLenhaBean.cnpj}" size="30" maxlength="30"
+                                 required="true">
+                        <f:validateLength  maximum="30" />
+                    </h:inputText>
+         <h:commandButton action="#{gastosLenhaBean.buscarCnpj()}" value="Buscar" /> 
+    </h:form-->
+    
+    <!--h:outputText value="{gastosLenhaBean.lista}" /-->
+     
+    
+    <h:dataTable value="#{gastosLenhaBean.gastosPorEstado}" var="gastos">
+                    <h:column>
+                            <f:facet name="header">Cidade</f:facet>
+                                    #{gastos.municipio}
+                    </h:column>
+                    <h:column>
+                            <f:facet name="header">Estado</f:facet>
+                            <h:outputText value="#{gastos.estado}">					
+                            </h:outputText>
+                    </h:column>
+                    <h:column>
+                            <f:facet name="header">Valor</f:facet>
+                            <h:outputText value="#{gastos.qtdlenha}"
+                                    style="text-align: right; display:block;">
+                                    <f:convertNumber minFractionDigits="2" />
+                            </h:outputText>
+                    </h:column>
+                    <h:column>
+                            <f:facet name="header">Empresa</f:facet>
+                            <h:outputText value="#{gastos.razaosocial}">					
+                            </h:outputText>
+                    </h:column>
+
+
+        </h:dataTable>
+	<p:separator />
+
+</h:body>
+</html>

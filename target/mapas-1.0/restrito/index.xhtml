@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Arvores ciclo de vida</title>
+            </f:facet>
+             
+            
+         
+   
+            
+        </h:head>
+
+        <h:body>
+            <p:layout fullPage="true">
+                
+                <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                 
+                    <td><h:commandButton value="Busca por CEP" action="/restrito/conta" />
+                          
+                            <h:commandButton value="Mapa Região Desmatada" action="/restrito/lancamento" />
+                            <h:commandButton value="Bucas" action="/restrito/cheque" /> 
+                            <h:commandButton value="Madereiras Ativas" action="/restrito/acao" /> 
+                            <h:selectOneMenu value="#{contextoBean.contaAtiva.conta}"
+                                             valueChangeListener="#{contextoBean.changeContaAtiva}"
+                                             rendered="#{not empty contextoBean and not empty contextoBean.contaAtiva}"
+                                             onchange="submit()">
+                                <f:selectItems value="#{contaBean.lista}" var="conta"
+                                               itemValue="#{conta.conta}" itemLabel="#{conta.descricao}" />
+                            </h:selectOneMenu>
+                             <a onclick="document.location = '#{request.contextPath}/j_spring_security_logout'"
+                                    title="Sair"><a4>SAIR</a4></a></td>             
+                
+                                    
+                                
+                             
+                </p:layoutUnit>
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">    
+                </p:layoutUnit>
+                <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="Resources">
+                            <p:menuitem value="Graficos" url="/publico/jfreechartcolunas.xhtml"  />
+                            <p:menuitem value="Produção de lenha por estado" url="/publico/mapa_populacao.xhtml"  />
+                            <p:menuitem value="Mapa com estados" url="mapa_gastos.jsf" />
+                            <p:menuitem value="Feeds" url="faces/pages/feed" />
+                            <p:menuitem value="Gerenciar Cliente" url="faces/view/cliente"/>
+                       
+                        </p:submenu>
+                    </p:menu>
+                </p:layoutUnit>
+                <p:layoutUnit position="center">
+                   <p:graphicImage value="# {MadeiraBean.grafico}" />
+                    
+                    
+                    
+                    
+                </p:layoutUnit>
+            </p:layout>
+        </h:body>
+    </f:view>
+</html>

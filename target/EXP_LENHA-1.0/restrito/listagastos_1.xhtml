@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui">	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Listagem de gastos</title>
+</h:head>
+<h:body>
+    <h1>Gastos</h1>
+      
+    <h:form >
+            <!--caixa para buscar o estado-->
+            <p:selectOneMenu id="estado" value="#{listaGastosBean.estado}" onchange="#{listaGastosBean.atualizaCidades(estado)}"> <!-- deve haver um setEstado no bean -->
+                <f:selectItem itemLabel="Selecione o estado" itemValue="" />
+		<f:selectItems value="#{listaGastosBean.estados}" var="a" itemLabel="#{a}" itemValue="#{a}" />
+            </p:selectOneMenu>
+        
+        
+            <!--caixa para buscar a cidade-->
+            <p:selectOneMenu id="cidade" value="#{listaGastosBean.cidade}" > <!-- deve haver um setCidade no bean -->
+                <f:selectItem itemLabel="Selecione a cidade" itemValue="" />
+		<f:selectItems value="#{listaGastosBean.cidades}" var="b" itemLabel="#{b}" itemValue="#{b}" />
+            </p:selectOneMenu>
+            
+            <!--caixa para buscar a empresa-->
+            <p:selectOneMenu id="empresa" value="#{listaGastosBean.empresa}" > <!-- deve haver um setCidade no bean -->
+                <f:selectItem itemLabel="Selecione a empresa" itemValue="" />
+		<f:selectItems value="#{listaGastosBean.empresas}" var="c" itemLabel="#{c}" itemValue="#{c}" />
+            </p:selectOneMenu>
+          
+        
+            
+            <p:selectOneRadio id="menor1000">
+                <f:selectItem itemValue="excluirmenores" itemLabel="Excluir gastos inferiores a R$1000" />               
+            </p:selectOneRadio>   
+            
+            
+            <h:commandButton value="Buscar Gastos" action="#{listaGastosBean.busca()}"/>
+        </h:form>
+	
+    <p:separator />
+    
+    
+    <h:form>       
+    <h:dataTable value="#{listaGastosBean.listaResultadoBusca}" var="gastos">
+                    <h:column>
+                            <f:facet name="header">Cidade</f:facet>
+                            <h:outputText value="#{gastos.municipio}">
+                            </h:outputText>
+                    </h:column>
+                    <h:column>
+                            <f:facet name="header">Estado</f:facet>
+                            <h:outputText value="#{gastos.estado}">					
+                            </h:outputText>
+                    </h:column>
+                    <h:column>
+                            <f:facet name="header">Valor</f:facet>
+                            <h:outputText value="#{gastos.qtdlenha}"
+                                    style="text-align: right; display:block;">
+                                    <f:convertNumber minFractionDigits="2" />
+                            </h:outputText>
+                    </h:column>
+                    <h:column>
+                            <f:facet name="header">Empresa</f:facet>
+                            <h:outputText value="#{gastos.razaosocial}">					
+                            </h:outputText>
+                    </h:column>
+                    <h:column>
+                        <h:commandLink
+                            action="comentar.xhtml" value="#{gastos.id}"
+                            title="Comentar sobre o gasto">
+                            <h:graphicImage library="imagens" width="22"
+					name="comentar.png"
+					style="border:0" />     
+                            <f:param name="gasto" value ="#{gastos.id}"/>                     
+			</h:commandLink>
+                    </h:column>
+
+        </h:dataTable>
+
+        <p:separator />
+    </h:form>
+</h:body>
+    
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">	
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Listagem de gastos</title>
+    </h:head>
+    <h:body>
+        <h1>Busca CNPJ situação cadastral</h1>
+       <h:outputLink value="index.jsf"><button>Voltar</button></h:outputLink><br/>
+
+        <p:separator />
+
+        <h:form>
+            <!--caixa para buscar ANO-->
+            <h:selectOneMenu id="Ano" value="#{buscacnpjbean.ano}"> <!-- deve haver um setEstado no bean -->
+                <f:selectItems value="#{buscacnpjbean.lista}" var="o" itemLabel="#{o.ano}" itemValue="#{o.ano}" />
+            </h:selectOneMenu>
+             <!--caixa para buscar CNPJ-->
+            <!--p:selectOneMenu id="CNPJ" value="{buscacnpjbean.cnpj}" effect="fold" editable="true">
+                <f:selectItem itemLabel="Informe o CNPJ" itemValue="" />
+                <f:selectItems value="{buscacnpjbean.lista}" var="o" itemLabel="{o.cnpj}" itemValue="{o.cnpj}" />
+            </p:selectOneMenu-->
+             <p:inputMask mask="99.999.999/9999-99" id="CNPJ" value="#{buscacnpjbean.cnpj}">
+                </p:inputMask>
+              <!--Botao enviar formulario-->
+            <h:commandButton action="#{buscacnpjbean.buscarCnpj()}" value="Buscar" /> 
+        </h:form>
+
+        <p:separator />
+
+        <h:dataTable value="#{buscacnpjbean.listacnpjAtivo}" var="gastos">
+            <h:column>
+                <f:facet name="header">Ano</f:facet>
+                    #{gastos.ano}
+            </h:column>
+            <h:column>
+                <f:facet name="header">CNPJ</f:facet>
+                    #{gastos.cnpj}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Estado</f:facet>
+                <h:outputText value="#{gastos.situacaocadastral}">					
+                </h:outputText>
+            </h:column>
+
+        </h:dataTable>
+        <p:separator />
+
+    </h:body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA23uLoMpc2F0Es2Y6JDpRhvN8edKp9ums">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(-25, -131),
+          zoom: 6,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+          
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+       var ponto = new google.maps.LatLng(-25.363882,-131.044922);
+       var marker = new google.maps.Marker({
+      position: ponto,//seta posição
+      map: map,//Objeto mapa
+      title:"Hello World!"//string que será exibida quando passar o mouse no marker
+      //icon: caminho_da_imagem
+  });
+      }
+    </script>
+
+        
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width:100%; height:100%"></div>
+    <h:dataTable value="#{EstadosBean.l}" var="local" rules="rows"
+			cellpadding="5">
+			<f:facet name="caption"> 
+				Locais
+			</f:facet>
+			<f:facet name="header">Listagem </f:facet>
+			<f:facet name="footer">Final da listagem</f:facet>
+			<h:column>
+				#{local.lat}
+					
+			</h:column>
+                        <h:column>
+				#{local.lng}
+					
+			</h:column>
+    </h:dataTable>
+  </body>
+  
+</html>   

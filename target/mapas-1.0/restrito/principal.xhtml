@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:util="http://xmlns.jcp.org/jsf/composite/components/util"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition template="/templates/externa.xhtml">
+        <ui:define name="corpo">
+            Usuário logado #{request.remoteUser} 
+           	<h:outputLink value="mapa_populacao.jsf">Mapa com estados</h:outputLink><br/>
+            
+             <p:graphicImage value="#{cidadeBean.grafico}" /> 
+            
+        </ui:define>
+    </ui:composition>
+</html>
