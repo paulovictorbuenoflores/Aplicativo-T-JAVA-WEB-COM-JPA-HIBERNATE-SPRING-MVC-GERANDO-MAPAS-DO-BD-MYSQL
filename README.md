@@ -6,6 +6,8 @@
 	<img src="permissoesGif01.gif" width="564" height="480" />
 	<h2>Comentarios</h2>
 	<img src="permissoesGif02.gif" width="564" height="869" />
+	<h2>Comentarios</h2>
+	<img src="Captura01.jpg" width="564" height="869" />
 	<br/>
 	<h3>Site Java Web, usando persistencia de dados, JPA Hibernate, Spring MVC, PrimeFaces, Banco de dados MySql, uso de web service para consulta de CEP</h3>
  </div>
