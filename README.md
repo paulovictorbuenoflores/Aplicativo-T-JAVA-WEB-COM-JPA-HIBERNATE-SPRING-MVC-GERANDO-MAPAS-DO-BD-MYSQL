@@ -6,6 +6,8 @@
 	<img src="permissoesGif01.gif" width="564" height="480" />
 	<h2>Comentarios</h2>
 	<img src="permissoesGif02.gif" width="564" height="869" />
+	<h2>Situação Cadastral da empresa por ano</h2>
+	<img src="permissoesGif03.gif" width="564" height="869" />
 	<h2>Telas</h2>
 	<img src="Capturar01.PNG" width="869" height="869" />
 	<img src="Capturar02.PNG" width="869" height="869" />
