@@ -37,8 +37,8 @@ public class UsuarioRN {
                     
 			usuario.getPermissao().add("ROLE_USUARIO");
                         String chave = aes.genKey(usuario.getSenha().length());
-                         aes.criptografa(usuario.getSenha(),chave);
-                        
+                         String senhaCriptografada=aes.gerarMD5Hash(usuario.getSenha());
+                        usuario.setSenha(senhaCriptografada);
 			this.usuarioDAO.salvar(usuario);
 		} else {
 			this.usuarioDAO.atualizar(usuario);

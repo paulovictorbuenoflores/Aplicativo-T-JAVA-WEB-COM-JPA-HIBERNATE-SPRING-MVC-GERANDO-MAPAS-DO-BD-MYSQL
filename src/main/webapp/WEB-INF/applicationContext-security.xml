@@ -16,6 +16,7 @@
     </http>
     <authentication-manager>
         <authentication-provider>
+            <password-encoder hash="md5"/>
             <jdbc-user-service data-source-ref="bd"
                                authorities-by-username-query="SELECT u.email, p.permissao 
 				FROM Usuarios u, usuario_permissao p 
