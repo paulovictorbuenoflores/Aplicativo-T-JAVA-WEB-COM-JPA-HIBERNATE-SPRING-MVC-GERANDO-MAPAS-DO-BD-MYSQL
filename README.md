@@ -21,7 +21,7 @@
   	<li>Spring MVC </li>
   	<li>Spring Security</li>
   	<li>XHTML</li>
-	<li>Hibernate</li>
+	<li>JPA-Hibernate</li>
 	<li>MySql</li>
 	<li>Web Service CEP</li>
 	</ul>
