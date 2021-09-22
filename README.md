@@ -13,7 +13,7 @@
 	<img src="Capturar02.PNG" width="869" height="869" />
 	<img src="Capturar03.PNG" width="869" height="869" />
 	<br/>
-	<h3>Tecnologias</h3>
+	Tecnologias:
 	<ul>
   	<li>NetBeans IDE</li>
   	<li>Java</li>
