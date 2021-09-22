@@ -22,7 +22,11 @@
   	<li>Spring Security</li>
   	<li>XHTML</li>
 	<li>JPA-Hibernate</li>
-	<li>MySql</li>
+	<li>SQL-MySql</li>
 	<li>Web Service CEP</li>
+	<li>CSS</ls>
+	<li><JavaScript>
+	<li>Maven POM</li>
+	<li>Java Properties</li>
 	</ul>
 <hr>
