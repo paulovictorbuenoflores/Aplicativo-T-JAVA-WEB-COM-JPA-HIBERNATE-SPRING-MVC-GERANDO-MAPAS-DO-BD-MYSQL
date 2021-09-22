@@ -13,7 +13,8 @@
 	<img src="Capturar02.PNG" width="869" height="869" />
 	<img src="Capturar03.PNG" width="869" height="869" />
 	<br/>
-	Tecnologias:
+	 </div>
+	 <h3>Tecnologias</h3>
 	<ul>
   	<li>NetBeans IDE</li>
   	<li>Java</li>
@@ -24,5 +25,4 @@
 	<li>MySql</li>
 	<li>Web Service CEP</li>
 	</ul>
- </div>
 <hr>
