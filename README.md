@@ -13,6 +13,17 @@
 	<img src="Capturar02.PNG" width="869" height="869" />
 	<img src="Capturar03.PNG" width="869" height="869" />
 	<br/>
-	<h3>Site Java Web, usando persistencia de dados, JPA Hibernate, Spring MVC, PrimeFaces, Banco de dados MySql, uso de web service para consulta de CEP</h3>
+	
+	<h3>Tecnologias</h3>
+	<ul>
+  	<li>NetBeans IDE</li>
+  	<li>Java</li>
+  	<li>Spring MVC </li>
+  	<li>Spring Security</li>
+  	<li>XHTML</li>
+	<li>Hibernate</li>
+	<li>MySql</li>
+	<li>Web Service CEP</li>
+	</ul>
  </div>
 <hr>
