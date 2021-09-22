@@ -25,7 +25,7 @@
 	<li>SQL-MySql</li>
 	<li>Web Service CEP</li>
 	<li>CSS</ls>
-	<li><JavaScript>
+	<li><JavaScript</li>
 	<li>Maven POM</li>
 	<li>Java Properties</li>
 	</ul>
