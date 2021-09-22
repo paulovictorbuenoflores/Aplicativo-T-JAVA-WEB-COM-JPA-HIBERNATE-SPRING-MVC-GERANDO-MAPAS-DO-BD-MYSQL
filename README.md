@@ -14,7 +14,7 @@
 	<img src="Capturar03.PNG" width="869" height="869" />
 	<br/>
 	 </div>
-	 <h3>Tecnologias</h3>
+	 <h3>Tecnologias:</h3>
 	<ul>
   	<li>NetBeans IDE</li>
   	<li>Java</li>
